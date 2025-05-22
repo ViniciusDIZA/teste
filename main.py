@@ -153,6 +153,7 @@ async def download_video(request: Request):
         return {"error": "itag não fornecido"}
 
     try:
+        
         yt = YouTube(url, 'WEB')
         stream = yt.streams.get_by_itag(itag)
         title = sanitize_filename(yt.title)
